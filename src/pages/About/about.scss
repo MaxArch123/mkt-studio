@@ -1,0 +1,31 @@
+.about {
+  margin: 0 20% 40px 20%;
+  padding: 0;
+  width: calc(100% - 40%);
+  .title {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .top-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: flex-start;
+
+    > * {
+      width: 100%;
+    }
+
+    .description {
+      h3 {
+        margin-top: 0;
+      }
+    }
+
+    .image img {
+      width: 100%;
+    }
+  }
+}

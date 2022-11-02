@@ -1,0 +1,125 @@
+/* #region styles to default */
+#root{
+  height: 100%;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+/* #endregion styles to default */
+
+/* #region for all referances */
+:root {
+  /* COLORS */
+  /* Backgrounds */
+  --darkest-bg-color: rgb(39, 39, 39);
+  --dark-bg-color: rgba(0, 0, 0, 0.703);
+  --main-bg-color: rgba(137, 137, 137, 0.588);
+  --lightest-bg-color: rgb(255, 255, 255);
+  /* Headers */
+  --darkest-header-color: rgb(74, 82, 24);
+  --main-header-color: rgb(149, 165, 42);
+  --lightest-header-color: rgb(228, 226, 108);
+  /* Text */
+  --darkest-text-color: rgb(0, 0, 0);
+  --main-text-color: rgb(255, 255, 255);
+  --lightest-text-color: rgba(126, 126, 126, 0.725);
+  /* Colors */
+  --darkest-color: rgb(27, 87, 91);
+  --main-color: rgb(42, 165, 149);
+  --lightest-color: rgb(110, 233, 217);
+  --status-ok: rgb(100, 246, 77);
+  --status-sending: rgb(246, 246, 77);
+  --status-error: rgb(199, 0, 0);
+  /* ****************************************************** */
+  /* ****************************************************** */
+  /* ****************************************************** */
+}
+/* FONTS */
+@font-face {
+  font-family: bigTitles;
+  src: url("./assets/fonts/Kanit-Regular.ttf");
+}
+@font-face {
+  font-family: subTitles;
+  src: url("./assets/fonts/Cormorant-SemiBold.ttf");
+}
+@font-face {
+  font-family: textForInfo;
+  src: url("./assets/fonts/Cormorant-Regular.ttf");
+}
+@font-face {
+  font-family: clearText;
+  src: url("./assets/fonts/Oxygen-Regular.ttf");
+}
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+
+/* #endregion for all referances */
+
+.container {
+  --content-padding-px: 80px;
+  padding-left: var(--content-padding-px);
+  padding-right: var(--content-padding-px);
+  width: calc(100% - 2 * var(--content-padding-px));
+}
+
+h1 {
+  font-family: bigTitles;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: subTitles;
+}
+
+p,
+input,
+textarea {
+  font-family: clearText;
+  font-size: 15px;
+}
+
+a,
+
+.unimportant {
+  font-family: clearText;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    overflow: none;
+    --content-padding-px: 40px;
+    padding-left: var(--content-padding-px);
+    padding-right: var(--content-padding-px);
+    width: calc(100% - 2 * var(--content-padding-px));
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    overflow: none;
+    --content-padding-px: 10px;
+    padding: 0 var(--content-padding-px);
+    width: calc(100% - 2 * var(--content-padding-px));
+  }
+}

@@ -1,0 +1,43 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: opacity 2s linear infinite;
+
+  > div {
+    border: 16px solid var(--main-bg-color);
+    border-top: 16px solid var(--darkest-bg-color);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+
+  > span {
+    margin-top: 40px;
+    line-height: 36px;
+    font-size: 36px;
+    font-family: subTitles;
+  }
+}

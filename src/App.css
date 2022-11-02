@@ -1,0 +1,7 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.App > section {
+    flex: 1 auto;
+}

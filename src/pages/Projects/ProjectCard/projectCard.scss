@@ -1,0 +1,256 @@
+// #region animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes moveInLeft {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes moveOutLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -150%;
+  }
+}
+@keyframes moveInBottom {
+  from {
+    bottom: -50%;
+    height: calc(100% - 210px);
+  }
+  to {
+    height: calc(100% - 210px);
+    bottom: 0;
+  }
+}
+@keyframes moveOutBottom {
+  from {
+    bottom: 0;
+    height: calc(100% - 360px);
+  }
+  to {
+    bottom: -50%;
+    height: calc(100% - 360px);
+  }
+}
+// #endregion animation
+
+.projects {
+  .card {
+    width: calc(400px * 1.41);
+    height: 400px;
+    margin: 20px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    color: var(--main-text-color);
+
+    a {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    h3,
+    p:nth-child(3),
+    div:nth-child(4) {
+      position: absolute;
+      margin: 0;
+      animation: 0.7s;
+      animation-name: fadeIn;
+    }
+
+    h3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 30px;
+      line-height: 50px;
+      animation-name: moveInLeft;
+      width: calc(100% - 80px);
+      padding: 40px;
+      background-color: var(--dark-bg-color);
+      // height of this: 50+40*2 = 130
+
+      &.active {
+        animation-name: moveOutLeft;
+        left: 100%;
+      }
+    }
+
+    p:nth-child(3) {
+      bottom: 5px;
+      font-family: textForInfo;
+      font-size: 30px;
+      padding: 20px;
+      animation-duration: 1.5s;
+      line-height: 20px;
+      z-index: 5;
+      // height 40px
+    }
+
+    div:nth-child(4) {
+      font-family: clearText;
+      font-size: 20px;
+      display: inherit;
+      animation-name: moveInBottom;
+      animation-duration: 0.7s;
+      background-color: var(--dark-bg-color);
+      padding: 40px;
+      //height should be 100% - height oh header - padding*2
+      height: calc(100% - 210px);
+      animation-fill-mode: forwards;
+      display: flex;
+      align-items: flex-end;
+      width: calc(100% - 80px);
+
+      // from top 130px
+      // padding 2*40px
+
+      &.active {
+        animation-name: moveOutBottom;
+        padding-top: calc(100% - 380px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  @keyframes moveInBottom {
+    from {
+      bottom: -50%;
+      height: calc(100% - 90px);
+    }
+    to {
+      height: calc(100% - 90px);
+      bottom: 0;
+    }
+  }
+  @keyframes moveOutBottom {
+    from {
+      bottom: 0;
+      height: calc(100% - 130px);
+    }
+    to {
+      bottom: -50%;
+      height: calc(100% - 150px);
+    }
+  }
+
+  section.projects {
+    .card {
+      width: calc(300px * 1.41);
+      height: 300px;
+      margin: 10px;
+
+      h3,
+      p:nth-child(3),
+      div:nth-child(4) {
+        padding: 10px;
+      }
+      h3 {
+        font-size: 20px;
+        width: calc(100% - 20px);
+      }
+      p:nth-child(3) {
+        font-size: 20px;
+        width: calc(100% - 20px);
+      }
+
+      div:nth-child(4) {
+        font-size: 15px;
+        width: calc(100% - 20px);
+        height: calc(100% - 90px);
+
+        &.active {
+          height: calc(100% - 130px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes moveInBottom {
+    from {
+      bottom: -50%;
+      height: calc(100% - 120px);
+    }
+    to {
+      height: calc(100% - 90px);
+      bottom: 0;
+    }
+  }
+  @keyframes moveOutBottom {
+    from {
+      bottom: 0;
+      height: calc(100% - 130px);
+    }
+    to {
+      bottom: -50%;
+      height: calc(100% - 150px);
+    }
+  }
+
+  section.projects {
+    .card {
+      width: calc(300px * 1.41);
+      height: 300px;
+      margin: 10px;
+
+      h3,
+      p:nth-child(3),
+      div:nth-child(4) {
+        padding: 10px;
+      }
+      h3 {
+        font-size: 20px;
+        width: calc(100% - 20px);
+      }
+      p:nth-child(3) {
+        font-size: 20px;
+        width: calc(100% - 20px);
+      }
+
+      div:nth-child(4) {
+        font-size: 15px;
+        width: calc(100% - 20px);
+        height: calc(100% - 90px);
+
+        &.active {
+          height: calc(100% - 130px);
+        }
+      }
+    }
+  }
+}

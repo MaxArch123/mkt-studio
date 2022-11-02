@@ -1,0 +1,14 @@
+section.projects {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+}
